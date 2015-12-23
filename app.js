@@ -32,6 +32,7 @@ var contactController = require('./controllers/contact');
 var adminController = require('./controllers/admin');
 var adminUserController = require('./controllers/admin/user');
 var adminTemplateController = require('./controllers/admin/template');
+var adminListingController = require('./controllers/admin/listing');
 
 /**
  * API keys, Passport configuration & app initialization.
@@ -150,6 +151,18 @@ app.post('/admin/users/save', passportConf.isAdmin, adminUserController.save)
 
 app.get('/admin/template', adminTemplateController.index)
 app.post('/admin/template/save', adminTemplateController.save)
+
+
+/**
+ * Admin Listing Routes
+ */
+
+app.get('/admin/listings', adminListingController.list)
+app.get('/admin/listings/edit', adminListingController.edit)
+app.get('/admin/listings/edit/:id', adminListingController.edit)
+app.post('/admin/listings/save', adminListingController.save)
+app.get('/admin/listings/delete/:id', adminListingController.delete)
+
 
 /**
  * API examples routes.

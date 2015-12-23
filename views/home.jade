@@ -1,27 +1,923 @@
-extends layout
-
+extends ./template_layout.jade
 block content
-  h1 Hackathon Starter
-  p.lead A boilerplate for Node.js web applications.
-  hr
-  .row
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
+  table.body-layout(width='100%', border='0', cellspacing='0', cellpadding='0', align='center', style='width: 100% !important; background: #f1f1f1;')
+    tr
+      td(align='center', valign='top')
+        //if mso
+        table.remove(width='100%', border='0', cellspacing='0', cellpadding='0', align='center')
+          tr
+            td(height='75', style='height: 75px; line-height:75px;')
+        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+          tr
+            td(align='center', valign='top')
+              table.container(width='600', align='center', border='0', cellspacing='0', cellpadding='0')
+                tr
+                  td(align='center', valign='top', style='background: #2bc7fa;')
+                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                      tr
+                        td(height='40', style='height: 40px; line-height:40px;')
+                      tr
+                        td(align='center', valign='top', style='line-height: 0 !important;')
+                          img(src=template.photo_url, alt='img1', width='169', height='169')
+                      tr
+                        td(height='16', style='height: 16px; line-height:16px;')
+                      tr
+                        td.content(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 25px; mso-line-height-rule: exactly; line-height: 25px; font-weight: 700; text-transform: uppercase;color: #ffffff;')
+                          a(style='text-decoration: none; color: #ffffff;', href='index.html')=template.first_name + ' ' + template.last_name
+                      tr
+                        td(height='7', style='height: 7px; line-height:7px;')
+                      tr
+                        td.content(align='center', valign='top', style='font-family: Georgia, serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400; font-style: italic;color: #ffffff;')=template.title
+                      tr
+                        td(align='center', valign='top')
+                          //if mso
+                            table(border='0', cellspacing='0', cellpadding='0', align='center')
+                              tr
+                          //if mso
+                            td(align='center', valign='top')
+                          table.inline-block(width='220', align='left', border='0', cellspacing='0', cellpadding='0')
+                            tr
+                              td.inline-container(align='center', valign='top', style='padding: 0 0 0 73px;')
+                                table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                  tr
+                                    td(align='center', valign='top')
+                                      table.center(align='left', border='0', cellspacing='0', cellpadding='0')
+                                        tr
+                                          td(width='13', align='center', valign='top')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='center', valign='top', style='line-height: 0 !important;')
+                                                  img(src='/images/phone.png', alt='phone', width='18', height='18')
+                                          td(align='center', valign='top', style='padding: 0 0 0 5px;')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 17px; font-weight: 400;color: #ffffff;')=template.phone
+                          //if mso
+                          //if mso
+                            td(align='center', valign='top')
+                          table.inline-block(width='150', align='left', border='0', cellspacing='0', cellpadding='0')
+                            tr
+                              td.inline-container(align='center', valign='top', style='padding: 0 0 0 5px;')
+                                table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                  tr
+                                    td(align='center', valign='top')
+                                      table.center(align='left', border='0', cellspacing='0', cellpadding='0')
+                                        tr
+                                          td(width='18', align='center', valign='top')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='center', valign='top', style='line-height: 0 !important;')
+                                                  img(src='images/fax.png', alt='phone', width='18', height='18')
+                                          td(align='center', valign='top', style='padding: 0 0 0 5px;')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 17px; font-weight: 400;color: #ffffff;')=template.fax
+                          //if mso
+                          //if mso
+                            td(align='center', valign='top')
+                          table.inline-block(width='230', align='left', border='0', cellspacing='0', cellpadding='0')
+                            tr
+                              td.inline-container(align='center', valign='top', style='padding: 0 20px 0 3px;')
+                                table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                  tr
+                                    td(align='center', valign='top')
+                                      table.center(align='left', border='0', cellspacing='0', cellpadding='0')
+                                        tr
+                                          td(width='18', align='center', valign='top')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='center', valign='top', style='line-height: 0 !important;')
+                                                  img(src='images/email.png', alt='mail', width='18', height='18')
+                                          td(align='center', valign='top', style='padding: 0 0 0 5px;')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 17px; font-weight: 400;color: #ffffff;')
+                                                  a(style='text-decoration: underline !important; color: #ffffff;', href='index.html')
+                                                    span.__cf_email__(data-cfemail='422b2c242d0226272f2d2e2b2c296c2d3025')=template.email
+                          //if mso
+                          //if mso
+                      tr
+                        td(height='39', style='height: 39px; line-height:39px;')
+        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+          tr
+            td(align='center', valign='top')
+              table.container(width='600', align='center', border='0', cellspacing='0', cellpadding='0')
+                tr
+                  td(align='center', valign='top', style='background: #ffffff;')
+                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                      tr
+                        td(height='37', style='height: 37px; line-height:37px;')
+                      tr
+                        td.content(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #333333;') I offer the best
+                      tr
+                        td(height='7', style='height: 7px; line-height:7px;')
+                      tr
+                        td.content(align='center', valign='top', style='font-family: Georgia, serif; font-size: 19px; mso-line-height-rule: exactly; line-height: 20px; font-weight: 400; font-style: italic;color: #2bc7fa;') real estate deals
+                      tr
+                        td(height='7', style='height: 7px; line-height:7px;')
+                      for val in listings
+                        tr
+                          td(align='center', valign='top')
+                            table.inline-block-2(width='300', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 5px 0 20px;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(height='20', style='height: 20px; line-height:20px;')
+                                    tr
+                                      td(align='center', valign='top', style='line-height: 0 !important;')
+                                        img(src=val.primary_photo, alt='img2', width='275', height='190')
+                            table.inline-block-2(width='300', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 25px 0 15px;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(height='14', style='height: 14px; line-height:14px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;color: #333333;')=val.title
+                                    tr
+                                      td(height='10', style='height: 10px; line-height:10px;')
+                                    tr
+                                      td(align='center', valign='top')
+                                        table(align='left', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(align='center', valign='top', style='background: #2bc7fa;')
+                                              table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(height='8', style='height: 8px; line-height:8px;')
+                                                tr
+                                                  td(align='center', valign='top', style='padding: 0 52px 0 13px;font-family: Arial, sans-serif; font-size: 24px; mso-line-height-rule: exactly; line-height: 24px; font-weight: 400;color: #ffffff;')=val.price
+                                                tr
+                                                  td(height='8', style='height: 8px; line-height:8px;')
+                                    tr
+                                      td(height='11', style='height: 11px; line-height:11px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Georgia, serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 19px; font-weight: 400;color: #777777;')
+                                        =val.description
+                                    tr
+                                      td(height='11', style='height: 11px; line-height:11px;')
+                                    tr
+                                      td(align='center', valign='top')
+                                        table(align='left', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(align='center', valign='top')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bed.png', alt='icon1', width='13', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=val.nBed
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bath.png', alt='icon2', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=val.nBath
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/car.png', alt='icon3', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=val.nCar
+                            //if mso
+                            //if mso
+                        if services
+                        tr
+                          td(height='40', style='height: 40px; line-height:40px;')
+        if service.length > 0
+          table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+            tr
+              td(align='center', valign='top')
+                table.container(width='600', align='center', border='0', cellspacing='0', cellpadding='0')
+                  tr
+                    td(align='center', valign='top', style='background: #2bc7fa;')
+                      table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                        tr
+                          td(height='34', style='height: 34px; line-height:34px;')
+                        tr
+                          td.content(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #ffffff;') Services
+                        tr
+                          td(height='5', style='height: 5px; line-height:5px;')
+                        tr
+                          td(align='center', valign='top')
+                            //if mso
+                              table(border='0', cellspacing='0', cellpadding='0', align='center')
+                                tr
+                            //if mso
+                              td(align='center', valign='top')
+                            table.inline-block-1(width='300', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 5px 0 20px;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(width='89', align='center', valign='top')
+                                        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(height='20', style='height: 20px; line-height:20px;')
+                                          tr
+                                            td(align='center', valign='top', style='line-height: 0 !important;')
+                                              img(src=service[0].primary_photo, alt='img6', width='89', height='89')
+                                      td(align='center', valign='top', style='padding: 0 0 0 12px;')
+                                        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(height='26', style='height: 26px; line-height:26px;')
+                                          tr
+                                            td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 23px; font-weight: 400;color: #ffffff;')=service[0].service
+                            //if mso
+                            //if mso
+                              td(align='center', valign='top')
+                            table.inline-block-1(width='300', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 21px 0 4px;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(width='89', align='center', valign='top')
+                                        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(height='20', style='height: 20px; line-height:20px;')
+                                          tr
+                                            td(align='center', valign='top', style='line-height: 0 !important;')
+                                              img(src=service[1].primary_photo, alt='img7', width='89', height='89')
+                                      td(align='center', valign='top', style='padding: 0 0 0 12px;')
+                                        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(height='26', style='height: 26px; line-height:26px;')
+                                          tr
+                                            td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 23px; font-weight: 400;color: #ffffff;')=service[1].service
+                            //if mso
+                            //if mso
+                        tr
+                          td(align='center', valign='top')
+                            //if mso
+                              table(border='0', cellspacing='0', cellpadding='0', align='center')
+                                tr
+                            //if mso
+                              td(align='center', valign='top')
+                            table.inline-block-1(width='300', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 5px 0 20px;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(width='89', align='center', valign='top')
+                                        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(height='20', style='height: 20px; line-height:20px;')
+                                          tr
+                                            td(align='center', valign='top', style='line-height: 0 !important;')
+                                              img(src=service[2].primary_photo, alt='img8', width='89', height='89')
+                                      td(align='center', valign='top', style='padding: 0 0 0 12px;')
+                                        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(height='26', style='height: 26px; line-height:26px;')
+                                          tr
+                                            td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 23px; font-weight: 400;color: #ffffff;')=service[2].service
+                            //if mso
+                            //if mso
+                              td(align='center', valign='top')
+                            table.inline-block-1(width='300', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 21px 0 4px;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(width='89', align='center', valign='top')
+                                        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(height='20', style='height: 20px; line-height:20px;')
+                                          tr
+                                            td(align='center', valign='top', style='line-height: 0 !important;')
+                                              img(src=service[3].primary_photo, alt='img9', width='89', height='89')
+                                      td(align='center', valign='top', style='padding: 0 0 0 12px;')
+                                        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(height='26', style='height: 26px; line-height:26px;')
+                                          tr
+                                            td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 23px; font-weight: 400;color: #ffffff;')=service[3].service
+                            //if mso
+                            //if mso
+                        tr
+                          td(height='41', style='height: 41px; line-height:41px;')
+        if Lists.length > 0
+          table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+            tr
+              td(align='center', valign='top')
+                table.container(width='600', align='center', border='0', cellspacing='0', cellpadding='0')
+                  tr
+                    td(align='center', valign='top', style='background: #ffffff;')
+                      table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                        tr
+                          td(height='37', style='height: 37px; line-height:37px;')
+                        tr
+                          td.content(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #333333;') Latest Properties
+                        tr
+                          td(height='5', style='height: 5px; line-height:5px;')
+                        tr
+                          td(align='center', valign='top')
+                            table.inline-block-3(width='200', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 0 0 20px;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(height='21', style='height: 21px; line-height:21px;')
+                                    tr
+                                      td(align='center', valign='top', style='line-height: 0 !important;')
+                                        img(src=Lists[0].primary_photo, alt='img10', width='180', height='125')
+                                    tr
+                                      td(height='7', style='height: 7px; line-height:7px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;color: #333333;')=Lists[0].title
+                                    tr
+                                      td(height='4', style='height: 4px; line-height:4px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #2bc7fa;')=Lists[0].price
+                                    tr
+                                      td(height='8', style='height: 8px; line-height:8px;')
+                                    tr
+                                      td(align='center', valign='top')
+                                        table(align='left', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(align='center', valign='top')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bed.png', alt='icon1', width='13', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[0].nBed
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bath.png', alt='icon2', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[0].nBath
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/car.png', alt='icon3', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[0].nCar
+                            table.inline-block-3(width='200', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 10px 0 10px;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(height='21', style='height: 21px; line-height:21px;')
+                                    tr
+                                      td(align='center', valign='top', style='line-height: 0 !important;')
+                                        img(src=Lists[1].primary_photo, alt='img11', width='180', height='125')
+                                    tr
+                                      td(height='7', style='height: 7px; line-height:7px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;color: #333333;')=Lists[1].title
+                                    tr
+                                      td(height='4', style='height: 4px; line-height:4px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #2bc7fa;')=Lists[1].price
+                                    tr
+                                      td(height='8', style='height: 8px; line-height:8px;')
+                                    tr
+                                      td(align='center', valign='top')
+                                        table(align='left', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(align='center', valign='top')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bed.png', alt='icon1', width='13', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[1].nBed
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bath.png', alt='icon2', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[1].nBath
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/car.png', alt='icon3', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[1].nCar
+                            //if mso
+                            //if mso
+                              td(align='center', valign='top')
+                            table.inline-block-3(width='200', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 20px 0 0;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(height='21', style='height: 21px; line-height:21px;')
+                                    tr
+                                      td(align='center', valign='top', style='line-height: 0 !important;')
+                                        img(src=Lists[2].primary_photo, alt='img12', width='180', height='125')
+                                    tr
+                                      td(height='7', style='height: 7px; line-height:7px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;color: #333333;')=Lists[2].title
+                                    tr
+                                      td(height='4', style='height: 4px; line-height:4px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #2bc7fa;')=Lists[2].price
+                                    tr
+                                      td(height='8', style='height: 8px; line-height:8px;')
+                                    tr
+                                      td(align='center', valign='top')
+                                        table(align='left', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(align='center', valign='top')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bed.png', alt='icon1', width='13', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[2].nBed
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bath.png', alt='icon2', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[2].nBath
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/car.png', alt='icon3', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[2].nCar
+                            //if mso
+                            //if mso
+                        tr
+                          td(align='center', valign='top')
+                            //if mso
+                              table(border='0', cellspacing='0', cellpadding='0', align='center')
+                                tr
+                            //if mso
+                              td(align='center', valign='top')
+                            table.inline-block-3(width='200', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 0 0 20px;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(height='21', style='height: 21px; line-height:21px;')
+                                    tr
+                                      td(align='center', valign='top', style='line-height: 0 !important;')
+                                        img(src=Lists[3].primary_photo, alt='img13', width='180', height='125')
+                                    tr
+                                      td(height='7', style='height: 7px; line-height:7px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;color: #333333;')=Lists[3].title
+                                    tr
+                                      td(height='4', style='height: 4px; line-height:4px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #2bc7fa;')=Lists[3].price
+                                    tr
+                                      td(height='8', style='height: 8px; line-height:8px;')
+                                    tr
+                                      td(align='center', valign='top')
+                                        table(align='left', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(align='center', valign='top')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bed.png', alt='icon1', width='13', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[3].nBed
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bath.png', alt='icon2', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[3].nBath
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/car.png', alt='icon3', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[3].nCar
+                            //if mso
+                            //if mso
+                              td(align='center', valign='top')
+                            table.inline-block-3(width='200', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 10px 0 10px;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(height='21', style='height: 21px; line-height:21px;')
+                                    tr
+                                      td(align='center', valign='top', style='line-height: 0 !important;')
+                                        img(src=Lists[4].primary_photo, alt='img14', width='180', height='125')
+                                    tr
+                                      td(height='7', style='height: 7px; line-height:7px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;color: #333333;')=Lists[4].title
+                                    tr
+                                      td(height='4', style='height: 4px; line-height:4px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #2bc7fa;')=Lists[4].price
+                                    tr
+                                      td(height='8', style='height: 8px; line-height:8px;')
+                                    tr
+                                      td(align='center', valign='top')
+                                        table(align='left', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(align='center', valign='top')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bed.png', alt='icon1', width='13', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[4].nBed
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bath.png', alt='icon2', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[4].nBath
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/car.png', alt='icon3', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[4].nCar
+                            //if mso
+                            //if mso
+                              td(align='center', valign='top')
+                            table.inline-block-3(width='200', align='left', border='0', cellspacing='0', cellpadding='0')
+                              tr
+                                td.inline-container(align='center', valign='top', style='padding: 0 20px 0 0;')
+                                  table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                    tr
+                                      td(height='21', style='height: 21px; line-height:21px;')
+                                    tr
+                                      td(align='center', valign='top', style='line-height: 0 !important;')
+                                        img(src=Lists[5].primary_photo, alt='img15', width='180', height='125')
+                                    tr
+                                      td(height='7', style='height: 7px; line-height:7px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;color: #333333;')=Lists[5].title
+                                    tr
+                                      td(height='4', style='height: 4px; line-height:4px;')
+                                    tr
+                                      td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #2bc7fa;')=Lists[5].price
+                                    tr
+                                      td(height='8', style='height: 8px; line-height:8px;')
+                                    tr
+                                      td(align='center', valign='top')
+                                        table(align='left', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td(align='center', valign='top')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bed.png', alt='icon1', width='13', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[5].nBed
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/bath.png', alt='icon2', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[5].nBath
+                                            td(align='center', valign='top', style='padding: 0 0 0 19px;')
+                                              table(align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(width='13', align='center', valign='top')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='line-height: 0 !important;')
+                                                          img(src='images/car.png', alt='icon3', width='18', height='15')
+                                                  td(align='center', valign='top', style='padding: 0 0 0 6px;')
+                                                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                      tr
+                                                        td(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 13px; mso-line-height-rule: exactly; line-height: 15px; font-weight: 400;color: #2bc7fa;')=Lists[5].nCar
+                            //if mso
+                            //if mso
+                        tr
+                          td(height='41', style='height: 41px; line-height:41px;')
+        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+          tr
+            td(align='center', valign='top')
+              table.container(width='600', align='center', border='0', cellspacing='0', cellpadding='0')
+                tr
+                  td(align='center', valign='top', style='background: #f7f7f7;')
+                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                      tr
+                        td(height='36', style='height: 36px; line-height:36px;')
+                      tr
+                        td.content(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #333333;') testimonials
+                      tr
+                        td(height='16', style='height: 16px; line-height:16px;')
+                      tr
+                        td.padding-reset(align='center', valign='top', style='padding: 0 20px;')
+                          table.inline-block-1(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                            tr
+                              td(height='10', style='height: 10px; line-height:10px;')
+                            tr
+                              td(align='center', valign='top', style='background: #2bc7fa;')
+                                table.inline-block-1(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                  for z in test
+                                    tr
+                                      td(align='center', valign='top')
+                                        //if mso
+                                          table(border='0', cellspacing='0', cellpadding='0', align='center')
+                                            tr
+                                        //if mso
+                                          td(align='center', valign='top')
+                                        table.inline-block-1(width='107', align='left', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td.inline-container(align='center', valign='top', style='padding: 0 0 0 18px;')
+                                              table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr
+                                                  td(height='18', style='height: 18px; line-height:18px;')
+                                                tr
+                                                  td(align='center', valign='top', style='line-height: 0 !important;')
+                                                    img(src=z.primary_photo, alt='img16', width='89', height='89')
+                                        //if mso
+                                        //if mso
+                                          td(align='center', valign='top')
+                                        table.inline-block-1(width='453', align='left', border='0', cellspacing='0', cellpadding='0')
+                                          tr
+                                            td.inline-container(align='center', valign='top', style='padding: 0 40px 0 18px;')
+                                              table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                                tr.remove
+                                                  td(height='19', style='height: 19px; line-height:19px;')
+                                                tr
+                                                  td(height='10', style='height: 10px; line-height:10px;')
+                                                tr
+                                                  td.content(align='left', valign='top', style='vertical-align: baseline !important;font-family: Georgia, serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 19px; font-weight: 400;color: #ffffff;')
+                                                    img(src='images/quote.png', alt='quotes', width='30', height='18', style='vertical-align: baseline !important; display: inline-block !important;')
+                                                    =z.test
+                                                tr
+                                                  td(height='8', style='height: 8px; line-height:8px;')
+                                                tr
+                                                  td.content(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400;color: #ffffff;')=z.name
+                                    tr
+                                      td(height='18', style='height: 18px; line-height:18px;')
+                                        //if mso
+                                        //if mso
+                      tr
+                        td(height='41', style='height: 41px; line-height:41px;')
+        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+          tr
+            td(align='center', valign='top')
+              table.container(width='600', align='center', border='0', cellspacing='0', cellpadding='0')
+                tr
+                  td(align='center', valign='top', style='background: #ffffff;')
+                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                      tr
+                        td(height='36', style='height: 36px; line-height:36px;')
+                      tr
+                        td.content(align='center', valign='top', style='font-family: Arial, sans-serif; font-size: 20px; mso-line-height-rule: exactly; line-height: 22px; font-weight: 400; text-transform: uppercase;color: #333333;') Contacts
+                      tr
+                        td(height='22', style='height: 22px; line-height:22px;')
+                      tr
+                        td.content(align='center', valign='top', style='font-family: Georgia, serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 19px; font-weight: 400;color: #777777;')=template.address
+                      tr
+                        td(height='3', style='height: 3px; line-height:3px;')
+                      tr
+                        td(align='center', valign='top')
+                          table.inline-block(width='220', align='left', border='0', cellspacing='0', cellpadding='0')
+                            tr
+                              td.inline-container(align='center', valign='top', style='padding: 0 0 0 73px;')
+                                table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                  tr
+                                    td(align='center', valign='top')
+                                      table.center(align='left', border='0', cellspacing='0', cellpadding='0')
+                                        tr
+                                          td(width='13', align='center', valign='top')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='center', valign='top', style='line-height: 0 !important;')
+                                                  img(src='images/phone-off.png', alt='phone', width='18', height='18')
+                                          td(align='center', valign='top', style='padding: 0 0 0 5px;')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 17px; font-weight: 400;color: #2bc7fa;')=template.phone
+                          //if mso
+                          //if mso
+                            td(align='center', valign='top')
+                          table.inline-block(width='150', align='left', border='0', cellspacing='0', cellpadding='0')
+                            tr
+                              td.inline-container(align='center', valign='top', style='padding: 0 0 0 5px;')
+                                table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                  tr
+                                    td(align='center', valign='top')
+                                      table.center(align='left', border='0', cellspacing='0', cellpadding='0')
+                                        tr
+                                          td(width='18', align='center', valign='top')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='center', valign='top', style='line-height: 0 !important;')
+                                                  img(src='images/fax-off.png', alt='phone', width='18', height='18')
+                                          td(align='center', valign='top', style='padding: 0 0 0 5px;')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 17px; font-weight: 400;color: #2bc7fa;')=template.fax
+                          //if mso
+                          //if mso
+                            td(align='center', valign='top')
+                          table.inline-block(width='230', align='left', border='0', cellspacing='0', cellpadding='0')
+                            tr
+                              td.inline-container(align='center', valign='top', style='padding: 0 20px 0 3px;')
+                                table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                  tr
+                                    td(align='center', valign='top')
+                                      table.center(align='left', border='0', cellspacing='0', cellpadding='0')
+                                        tr
+                                          td(width='18', align='center', valign='top')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='center', valign='top', style='line-height: 0 !important;')
+                                                  img(src='images/email-off.png', alt='mail', width='18', height='18')
+                                          td(align='center', valign='top', style='padding: 0 0 0 5px;')
+                                            table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                                              tr
+                                                td(height='16', style='height: 16px; line-height:16px;')
+                                              tr
+                                                td(align='left', valign='top', style='font-family: Arial, sans-serif; font-size: 15px; mso-line-height-rule: exactly; line-height: 17px; font-weight: 400;color: #2bc7fa;')
+                                                  a(style='text-decoration: underline !important; color: #2bc7fa;', href='index.html')
+                                                    span.__cf_email__(data-cfemail='96fff8f0f9d6f2f3fbf9fafff8fdb8f9e4f1')=template.email
+                      tr
+                        td(height='21', style='height: 21px; line-height:21px;')
+                      tr
+                        td(align='center', valign='top')
+                          table(align='center', border='0', cellspacing='0', cellpadding='0')
+                            tr
+                              td(align='center', valign='top', style='padding: 0 3px; line-height: 0 !important;')
+                                a(style='text-decoration: none; display: inline-block;', href=template.social.facebook)
+                                  img(src='images/facebook.png', alt='facebook', width='51', height='51')
+                              td(align='center', valign='top', style='padding: 0 3px; line-height: 0 !important;')
+                                a(style='text-decoration: none; display: inline-block;', href=template.social.twitter)
+                                  img(src='images/twitter.png', alt='twitter', width='51', height='51')
+                              td(align='center', valign='top', style='padding: 0 3px; line-height: 0 !important;')
+                                a(style='text-decoration: none; display: inline-block;', href=template.social.skype)
+                                  img(src='images/skype.png', alt='skype', width='51', height='51')
+                      tr
+                        td(height='40', style='height: 40px; line-height:40px;')
+        table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+          tr
+            td(align='center', valign='top')
+              table.container(width='600', align='center', border='0', cellspacing='0', cellpadding='0')
+                tr
+                  td(align='center', valign='top', style='background: #2bc7fa;')
+                    table(width='100%', align='center', border='0', cellspacing='0', cellpadding='0')
+                      tr
+                        td(height='35', style='height: 35px; line-height:35px;')
+                      tr
+                        td.content(align='center', valign='top', style='padding: 0 50px;font-family: Georgia, serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 19px; font-weight: 400;color: #f7f7f7;')
+                          =agent.disclaimer
+                          br
+                          a(style='text-decoration: underline !important; color: #ffffff;', href='index.html') Click Here to unsubscribe
+                          br
+                          =agent.footer
+                          br
+                      tr
+                        td.content(align='center', valign='top', style='padding: 0 50px;font-family: Georgia, serif; font-size: 12px; mso-line-height-rule: exactly; line-height: 19px; font-weight: 400;color: #ffffff;')
+                          | Online version is
+                          a(style='text-decoration: underline !important; color: #ffffff;', href='index.html') here
+                          | .
+                      tr
+                        td(height='29', style='height: 29px; line-height:29px;')
+                      tr
+                        td.content(align='center', valign='top', style='font-family: Georgia, serif; font-size: 11px; mso-line-height-rule: exactly; line-height: 14px; font-weight: 400; font-style: italic;color: #ffffff;')
+                          | some copy right
+                          br
+                          a(style='text-decoration: none; color: #ffffff;', href='index.html') Click Here for our Privacy Policy
+                      tr
+                        td(height='40', style='height: 40px; line-height:40px;')
+        table.remove(width='100%', border='0', cellspacing='0', cellpadding='0', align='center')
+          tr
+            td(height='64', style='height: 64px; line-height:64px;')

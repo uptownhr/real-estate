@@ -15,8 +15,10 @@
           a(href='/admin') Dashboard
         li(class=title=='Basic Info'?'active':undefined)
           a(href='/admin/template') Template
-        li(class=title=='Users'?'active':undefined)
+        li(class=title == 'Users' ? 'active' : undefined)
           a(href='/admin/users') Admin Users
+        li(class=title == 'Listings' ? 'active' : undefined)
+          a(href='/admin/listings') Listings
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=title=='Login'?'active':undefined)

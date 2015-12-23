@@ -1,0 +1,68 @@
+extends ../admin_layout
+
+block content
+    if editing
+        h2 Editing
+            small= data.title
+    else
+        h2 Creating Property Listing
+
+    form.form-horizontal(method="POST" action="/admin/listings/save")
+        input(type='hidden', name='_csrf', value=_csrf)
+        input(type="hidden" name="id" value=data._id)
+        .form-group
+            label.col-sm-2 Title
+            .col-sm-10
+                input.form-control(type="text" placeholder="Title" name="title" value=data.title)
+        .form-group
+            label.col-sm-2 Street Address
+            .col-sm-10
+                input.form-control(type="text" placeholder="123 streeet ave" name="address" value=data.address)
+        .form-group
+            label.col-sm-2 City
+            .col-sm-10
+                input.form-control(type="text" placeholder="Los angeles" name="city" value=data.city)
+        .form-group
+            label.col-sm-2 State
+            .col-sm-10
+                input.form-control(type="text" placeholder="California" name="state" value=data.state)
+        .form-group
+            label.col-sm-2 ZipCode
+            .col-sm-10
+                input.form-control(type="text" placeholder="90019" name="zip" value=data.zip)
+        .form-group
+            label.col-sm-2 Description
+            .col-sm-10
+                textarea.form-control(name="description")=data.description
+        .form-group
+            label.col-sm-2 Price
+            .col-sm-10
+                input.form-control(type="text" placeholder="Price" name="price" value=data.price)
+
+                //
+                    select.form-control(name="gender")
+                        option(value="male" selected=profile.gender == 'male') Male
+                        option(value="female" selected=profile.gender == 'female') Female
+        .form-group
+            label.col-sm-2 # Bed
+            .col-sm-10
+                input.form-control(type="text" placeholder="Bed" name="nBed" value=data.nBed)
+        .form-group
+            label.col-sm-2 # Bath
+            .col-sm-10
+                input.form-control(type="text" placeholder="Bath" name="nBath" value=data.nBath)
+        .form-group
+            label.col-sm-2 # Car
+            .col-sm-10
+                input.form-control(type="text" placeholder="Car" name="nCar" value=data.nCar)
+        .form-group
+            label.col-sm-2 Square Foot
+            .col-sm-10
+                input.form-control(type="text" placeholder="square foot" name="sqft" value=data.sqft)
+        .form-group
+            label.col-sm-2 Primary Photo
+            .col-sm-10
+                input.form-control(type="text" placeholder="URL TO photo" name="primary_photo_url" value=data.primary_photo_url)
+        .form-group
+            .col-sm-offset-2.col-sm-10
+                button.btn.btn-default(type="submit") Save

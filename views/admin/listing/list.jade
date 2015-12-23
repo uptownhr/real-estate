@@ -1,0 +1,35 @@
+extends ../admin_layout
+
+block content
+    h2 Property Listings
+        | -
+        small
+            a(href="/admin/listings/edit") Add
+
+    table.table
+        tr
+            th Picture
+            th Title
+            th Description
+            th Price
+            th # Bed
+            th # Bath
+            th # Car
+            th Sq Ft
+            th Action
+
+        each listing in listings
+            tr
+                td
+                    img(src="#{listing.primary_photo_url}")
+                td= listing.title
+                td= listing.description
+                td= listing.price
+                td= listing.nBed
+                td= listing.nBath
+                td= listing.nCar
+                td= listing.sqft
+                td
+                    a(href="/admin/listings/edit/#{listing._id}") Edit
+                    |  |
+                    a(href="/admin/listings/delete/#{listing._id}")  Delete

@@ -1,5 +1,6 @@
 "use strict"
-const Template = require('../models/Template')
+const Template = require('../models/Template'),
+  Listing = require('../models/Listing')
 
 /**
  * GET /
@@ -7,11 +8,12 @@ const Template = require('../models/Template')
  */
 exports.index = function(req, res) {
   Template.findOne((err,template) => {
-    console.log(template, template.full_name)
-    res.render('home-1-static-image', {
-      title: 'Home',
-      template: template
-    });
+    Listing.find( (err, listings) => {
+      res.render('home', {
+        title: 'Home',
+        template: template,
+        listings: listings
+      });
+    })
   })
-
 };
