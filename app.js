@@ -33,6 +33,9 @@ var adminController = require('./controllers/admin');
 var adminUserController = require('./controllers/admin/user');
 var adminTemplateController = require('./controllers/admin/template');
 var adminListingController = require('./controllers/admin/listing');
+var adminServicesController = require('./controllers/admin/services');
+var adminTestimonyController = require('./controllers/admin/testimony');
+var template2Controller = require('./controllers/template2');
 
 /**
  * API keys, Passport configuration & app initialization.
@@ -162,6 +165,30 @@ app.get('/admin/listings/edit', adminListingController.edit)
 app.get('/admin/listings/edit/:id', adminListingController.edit)
 app.post('/admin/listings/save', adminListingController.save)
 app.get('/admin/listings/delete/:id', adminListingController.delete)
+
+/**
+ * Admin Services Routes
+ */
+app.get('/admin/services', adminServicesController.list);
+app.get('/admin/services/edit', adminServicesController.edit);
+app.get('/admin/services/edit/:id', adminServicesController.edit);
+app.post('/admin/services/save', adminServicesController.save);
+app.get('/admin/services/delete/:id', adminServicesController.delete);
+
+/**
+ * Admin Testimony Routes
+ */
+app.get('/admin/testimony', adminTestimonyController.list);
+app.get('/admin/testimony/edit', adminTestimonyController.edit);
+app.get('/admin/testimony/edit/:id', adminTestimonyController.edit);
+app.post('/admin/testimony/save', adminTestimonyController.save);
+app.get('/admin/testimony/delete/:id', adminTestimonyController.delete);
+
+/**
+ * Template #2 Routes
+ */
+app.get('/template2', template2Controller.index);
+
 
 
 /**

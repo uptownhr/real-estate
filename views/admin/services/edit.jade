@@ -1,0 +1,23 @@
+extends ../admin_layout
+
+block content
+    if editing
+        h2 Editing
+            small= data.title
+    else
+        h2 Create Services Offered
+
+    form.form-horizontal(method="POST" action="/admin/services/save")
+        input(type='hidden', name='_csrf', value=_csrf)
+        input(type="hidden" name="id" value=data._id)
+        .form-group
+            label.col-sm-2 Services
+            .col-sm-10
+                input.form-control(type="text" placeholder="Service" name="service" value=data.service)
+        .form-group
+            label.col-sm-2 primary photo URL
+            .col-sm-10
+                input.form-control(type="text" placeholder="URL of Photo" name="primary_photo" value=data.primary_photo)
+        .form-group
+            .col-sm-offset-2.col-sm-10
+                button.btn.btn-default(type="submit") Save

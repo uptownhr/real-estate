@@ -1,0 +1,25 @@
+extends ../admin_layout
+
+block content
+    h2 List of Testimony
+        | -
+        small
+            a(href="/admin/testimony/edit") Add
+
+    table.table
+        tr
+            th Picture
+            th Testimony
+            th Name
+
+
+        each t in Testimony
+            tr
+                td
+                    img(src="#{t.primary_photo}")
+                td= t.test
+                td= t.name
+                td
+                    a(href="/admin/testimony/edit/#{t._id}") Edit
+                    |  |
+                    a(href="/admin/testimony/delete/#{t._id}")  Delete

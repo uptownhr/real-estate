@@ -1,0 +1,23 @@
+extends ../admin_layout
+
+block content
+    h2 Property Listings
+        | -
+        small
+            a(href="/admin/services/edit") Add
+
+    table.table
+        tr
+            th Picture
+            th Services
+
+
+        each service in services
+            tr
+                td
+                    img(src="#{service.primary_photo}")
+                td= service.service
+                td
+                    a(href="/admin/services/edit/#{service._id}") Edit
+                    |  |
+                    a(href="/admin/services/delete/#{service._id}")  Delete
