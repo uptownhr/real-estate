@@ -19,11 +19,12 @@ jQuery(document).ready(function () {
     {
       delay: 6000,
       startwidth: 1170,
-      startheight: 450,
+      startheight: 600,
       hideThumbs: 10,
-      fullWidth: "on",
-      forceFullWidth: "on",
-      navigationStyle: "preview4"
+      fullWidth: "off",
+      forceFullWidth: "off",
+      navigationStyle: "preview4",
+      backgroundPosition: "50% 50%"
     });
 
 });	//ready

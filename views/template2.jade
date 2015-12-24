@@ -55,6 +55,8 @@ html(lang='en')
                 | Honorary Vice President
               // /.header-slogan
           .col-md-5.col-lg-5.hidden-sm.hidden-xs
+
+          .col-md-3.col-sm-5
             .contact-info-blocks.hidden-sm.hidden-xs
               div
                 i.fa.fa-phone
@@ -64,12 +66,6 @@ html(lang='en')
                 i.fa.fa-envelope
                 |  Email Us
                 span=template.email
-          .col-md-3.col-sm-5
-            .top-search
-              form.search-widget(role='form')
-                input.form-control(type='text', placeholder='Find property')
-                button.btn.btn-submit(type='submit')
-                  i.fa.fa-search
     // Static navbar
     nav.navbar.navbar-inverse.navbar-static-top.sticky.yamm
       .container
@@ -95,9 +91,6 @@ html(lang='en')
               a(href='real-estate-about.html') About
             li
               a(href='real-estate-contact.html') Contact
-          ul.nav.navbar-nav.navbar-right
-            li.active
-              a(href='r-add-property.html') Add Property
         // /.nav-collapse
       // /.container
     // navigation end
@@ -109,17 +102,17 @@ html(lang='en')
           for val in listings
             li(data-transition='fade', data-slotamount='5', data-masterspeed='1000', data-title='Good Morning')
               // MAIN IMAGE
-              img(src=val.primary_photo_url, alt='darkblurbg', data-bgfit='cover', data-bgposition='left top', data-bgrepeat='no-repeat')
+              img(src=val.primary_photo_url, alt='darkblurbg', data-bgfit='cover', data-bgposition='center center', data-bgrepeat='no-repeat')
               .caption.slider-title.sft(data-x='50', data-y='160', data-speed='1000', data-start='1000', data-easing='easeOutExpo')=val.title
               .caption.slider-text.sfl(data-x='50', data-y='214', data-speed='1000', data-start='1800', data-easing='easeOutExpo')
-                | 124, Munna wali
+                =val.address
               .caption.sfb.slider-price.tp-resizeme(data-x='50', data-y='258', data-speed='500', data-start='1800', data-easing='Sine.easeOut')=val.price
             // SLIDE
       // full width banner
     // revolution end
     .search-filter
       .container
-        h1 Hello World I am not so smart but I am very very stupid!
+        h1 I am what I say I am
     .divide70
     .container
       h3.title-section.clearfix
@@ -134,7 +127,7 @@ html(lang='en')
                     a(href='#')
                       i.fa.fa-search-plus
                     img.img-responsive(src=val.primary_photo_url, alt='propety')
-                    span.label-property Reduced
+                    span.label-property Delete if not used
                     span.label-price=val.price
                   // content
                 // image
@@ -145,7 +138,7 @@ html(lang='en')
                   .pull-left
                     p
                       b Area:
-                      |  120m
+                      =val.sqft
                       sup 2
                   .pull-right
                     span
@@ -155,46 +148,6 @@ html(lang='en')
                       img(src='/images/bath.png', alt='')
                       =val.nBath
       .divide60
-      .row
-        .col-sm-12
-          h3.title-section All Properties
-      .row
-        .all-property-slider
-          #property-slider
-            for val in listings
-              .item
-                .property.clearfix
-                  .image
-                    .content
-                      a(href='#')
-                        i.fa.fa-search-plus
-                      img.img-responsive(src=val.primary_photo_url, alt='propety')
-                      span.label-property Reduced
-                      span.label-price=val.price
-                    // content
-                  // image
-                  .property-detail
-                    h5.title
-                      a(href='#')=val.title
-                    span.location corrupti quos
-                    .pull-left
-                      p
-                        b Area:
-                        |  120m
-                        sup 2
-                    .pull-right
-                      span
-                        img(src='/images/bed.png', alt='')
-                        =val.nBed
-                      span
-                        img(src='/images/bath.png', alt='')
-                        =val.nBath
-                  // property details
-              // property
-                // property details
-            // property
-        // owl slider
-      // all property slider
     // col-md-12
     .divide40
     .call-to-action
@@ -228,27 +181,16 @@ html(lang='en')
           .col-md-3.col-sm-6.margin30
             h3 About us
             p=template.disclaimer
-          .col-md-3.col-sm-6.margin30
-            h3 Recent Properties
-            for val in listings
-              .media
-                .media-left
-                  a(href='#')
-                    img.media-object(src=val.primary_photo_url, width='100', alt='...')
-                .media-body
-                  h4.media-heading
-                    a(href='#')=val.title
-                  span.location=val.title
             // media
           h3 Contact us
-          p
-            strong=template.name
-            br
-            =template.address
-          p
-          =template.phone
-          br
-          a(href='mailto:#{template.email}')=template.email
+            p
+              strong=template.name
+              br
+              =template.address
+              br
+              =template.phone
+              br
+              a(href='mailto:#{template.email}')=template.email
     // footer
     .copyright
       .container.text-center

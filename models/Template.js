@@ -12,6 +12,7 @@ var templateSchema = new mongoose.Schema({
   fax: {type: String, default: '888-888-8888'},
   email: {type: String, default: 'jlee@penguin.ws'},
   photo_url: {type: String, default: 'http://cdn-cms.pgimgs.com/static/2015/09/real-estate-agent-headshot.jpg'},
+  disclaimer: {type: String, default: 'Our services are dank'},
   social: {
     twitter: {type: String, default: 'https://www.twitter.com/jleebiz'},
     facebook: {type: String, default: 'https://www.facebook.com/uptownhr'},
