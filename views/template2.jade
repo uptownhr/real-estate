@@ -34,12 +34,12 @@ html(lang='en')
             span.top-welcome Find you dream location
           .col-sm-6
             .top-social
-              a(href=template.facebook)
+              a(href=template.social.facebook)
                 i.fa.fa-facebook
-              a(href=template.twitter)
+              a(href=template.social.twitter)
                 i.fa.fa-twitter
-              a(href=template.skype)
-                i.fa.fa-youtube-play
+              a(href=template.social.skype)
+                i.fa.fa-skype
     .header-logo-bar
       .container
         .row
@@ -47,12 +47,12 @@ html(lang='en')
             a.header-logo(href='index.html')
               span.header-icon
                 i.fa.fa-home
-              span.header-title=template.name
+              span.header-title=template.last_name
               // /.header-title
               span.header-slogan
-                | Real Estate
+                =template.tag
                 br
-                | Honorary Vice President
+                =template.title
               // /.header-slogan
           .col-md-5.col-lg-5.hidden-sm.hidden-xs
 
@@ -95,21 +95,22 @@ html(lang='en')
       // /.container
     // navigation end
     // rev slider start
-    .fullwidthbanner
-      .tp-banner
-        ul
-          // SLIDE
-          for val in listings
-            li(data-transition='fade', data-slotamount='5', data-masterspeed='1000', data-title='Good Morning')
-              // MAIN IMAGE
-              img(src=val.primary_photo_url, alt='darkblurbg', data-bgfit='cover', data-bgposition='center center', data-bgrepeat='no-repeat')
-              .caption.slider-title.sft(data-x='50', data-y='160', data-speed='1000', data-start='1000', data-easing='easeOutExpo')=val.title
-              .caption.slider-text.sfl(data-x='50', data-y='214', data-speed='1000', data-start='1800', data-easing='easeOutExpo')
-                =val.address
-              .caption.sfb.slider-price.tp-resizeme(data-x='50', data-y='258', data-speed='500', data-start='1800', data-easing='Sine.easeOut')=val.price
+    .forcefullwidth_wrapper_tp_banner(style="position:relative; width: '100%'; height: auto; margin-top: 0px; margin-bottom: 0px;")
+      .fullwidthbanner
+        .tp-banner
+          ul
             // SLIDE
-      // full width banner
-    // revolution end
+            for val in listings
+              li(data-transition='fade', data-slotamount='5', data-masterspeed='1000', data-title='Good Morning')
+                // MAIN IMAGE
+                img(src=val.primary_photo_url, alt='darkblurbg', data-bgfit='cover', data-bgposition='center center', data-bgrepeat='no-repeat')
+                .caption.slider-title.sft(data-x='50', data-y='160', data-speed='1000', data-start='1000', data-easing='easeOutExpo')=val.title
+                .caption.slider-text.sfl(data-x='50', data-y='214', data-speed='1000', data-start='1800', data-easing='easeOutExpo')
+                  =val.address
+                .caption.sfb.slider-price.tp-resizeme(data-x='50', data-y='258', data-speed='500', data-start='1800', data-easing='Sine.easeOut')=val.price
+              // SLIDE
+        // full width banner
+      // revolution end
     .search-filter
       .container
         h1 I am what I say I am
