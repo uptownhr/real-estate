@@ -13,7 +13,7 @@ exports.list = function(req, res){
     console.log(testimony);
     res.render('admin/testimony/list', {
       Testimony: testimony,
-      title: 'Services'
+      title: 'Testimony'
     })
   })
 }

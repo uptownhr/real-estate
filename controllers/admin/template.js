@@ -16,6 +16,7 @@ exports.index = function(req, res){
     delete data.__v
 
     res.render('admin/template/index', {
+      title: 'Template',
       data: data,
     })
   })
