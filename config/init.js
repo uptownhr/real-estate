@@ -46,3 +46,7 @@ exports.initialized = function(req, res, next){
     }
   })
 }
+
+exports.default = {
+  home_view: 'template2'
+}
