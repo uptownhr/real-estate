@@ -138,6 +138,7 @@ html(lang='en')
                   .pull-left
                     p
                       b Area:
+                      =" "
                       =val.sqft
                       sup 2
                   .pull-right
@@ -179,22 +180,28 @@ html(lang='en')
       .container
         .row
           .col-md-3.col-sm-6.margin30
+          .col-md-3.col-sm-6.margin30
             h3 About us
             p=template.disclaimer
             // media
-          h3 Contact us
-            p
-              strong=template.name
-              br
-              =template.address
-              br
-              =template.phone
-              br
-              a(href='mailto:#{template.email}')=template.email
+          .col-md-3.col-sm-6.margin30
+          .col-md-3.col-sm-6.margin30
+            h3 Contact us
+              p
+                strong=template.first_name
+                =" "
+                =template.last_name
+                br
+                p
+                =template.address
+                br
+                =template.phone
+                br
+                a(href='mailto:#{template.email}')=template.email
     // footer
     .copyright
       .container.text-center
-        span © Copyright 2015. All right reserved. Assan real estate
+        span © Copyright 2015. All right reserved. TBQ-LOL real estate
     // scripts and plugins
     // must need plugin jquery
     script(src='jquery.min.js')
