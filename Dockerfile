@@ -3,7 +3,7 @@ FROM node:5.2.0
 RUN apt-get update
 RUN apt-get install build-essential -y
 
-ENV TERM="xterm"
+ENV TERM "xterm"
 
 ADD ./package.json /app/package.json
 ADD ./app.js /app/app.js
