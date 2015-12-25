@@ -38,8 +38,9 @@ html(lang='en')
                 i.fa.fa-facebook
               a(href=template.social.twitter)
                 i.fa.fa-twitter
-              a(href=template.social.skype)
-                i.fa.fa-skype
+              if template.social.skype.length > 0
+                a(href=template.social.skype)
+                  i.fa.fa-skype
     .header-logo-bar
       .container
         .row
@@ -54,7 +55,7 @@ html(lang='en')
                 br
                 =template.title
               // /.header-slogan
-          .col-md-4.col-lg-5.hidden-sm.hidden-xs
+          .col-md-4.hidden-sm.hidden-xs
 
           .col-md-4.col-sm-5
             .contact-info-blocks.hidden-sm.hidden-xs
