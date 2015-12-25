@@ -7,7 +7,7 @@ const Template = require('../models/Template'),
 
 /**
  * GET /
- * Home page.
+ * Home page.a
  */
 exports.index = function(req, res) {
   Template.findOne((err,template) => {
@@ -21,17 +21,19 @@ exports.index = function(req, res) {
           q.splice(listings_count-1, remainder);
         }
 
-
+        var temp = {primary_photo_url: {default: 'http://cdn-cms.pgimgs.com/static/2015/09/real-estate-agent-headshot.jpg'}};
         var rows = q.reduce(function (prev, item, i) {
-          if(i % 4 === 0)
+          if(i % 3 === 0)
             prev.push([item]);
           else
             prev[prev.length - 1].push(item);
           return prev;
         }, []);
-
-        console.log(rows)
-
+        var lens = rows.length;
+        console.log(lens, rows[lens-1].length);
+        while(rows[lens-1].length < 3){
+          rows[lens-1].push([temp]);
+        }
         Services.find( (err, services) => {
           Testimony.find( (err, test) => {
             res.render(defaults.home_view, {

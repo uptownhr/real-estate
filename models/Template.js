@@ -13,6 +13,7 @@ var templateSchema = new mongoose.Schema({
   email: {type: String, default: 'jlee@penguin.ws'},
   photo_url: {type: String, default: 'http://cdn-cms.pgimgs.com/static/2015/09/real-estate-agent-headshot.jpg'},
   disclaimer: {type: String, default: 'Our services are dank'},
+  copyright: {type: String, default: '© 2015 TBQ-LOL'},
   social: {
     twitter: {type: String, default: 'https://www.twitter.com/jleebiz'},
     facebook: {type: String, default: 'https://www.facebook.com/uptownhr'},
