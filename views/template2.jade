@@ -79,8 +79,8 @@ html(lang='en')
         #navbar.navbar-collapse.collapse
           ul.nav.navbar-nav
             li.dropdown.active
-              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true')
-                | Home
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true') Home
+                =" "
                 i.fa.fa-angle-down
               ul.dropdown-menu
                 li
@@ -100,8 +100,8 @@ html(lang='en')
         .tp-banner
           ul
             // SLIDE
-            for val in listings
-              li(data-transition='fade', data-slotamount='5', data-masterspeed='1000', data-title='Good Morning')
+            for val in listings.slice(0,3)
+              li(data-transition='fade', data-slotamount='5', data-masterspeed='1000', data-title='#{val.title}')
                 // MAIN IMAGE
                 img(src=val.primary_photo_url, alt='darkblurbg', data-bgfit='cover', data-bgposition='center center', data-bgrepeat='no-repeat')
                 .caption.slider-title.sft(data-x='50', data-y='160', data-speed='1000', data-start='1000', data-easing='easeOutExpo')=val.title
@@ -111,13 +111,10 @@ html(lang='en')
               // SLIDE
         // full width banner
       // revolution end
-    .search-filter
-      .container
-        h1 I am what I say I am
-    .divide70
+    .divide70(style="background-color: #32c5d2; height:5px;margin-bottom: 50px;")
     .container
-      h3.title-section.clearfix
-        | Featured property
+      h2.title-section.clearfix
+        | Here are my listings
       for row in rows
         .row
           for val in row
@@ -127,15 +124,15 @@ html(lang='en')
                   .content
                     a(href='#')
                       i.fa.fa-search-plus
-                    img.img-responsive(src=val.primary_photo_url, alt='propety')
-                    span.label-property Delete if not used
-                    span.label-price=val.price
+                    img.img-responsive(src=val.primary_photo_url, alt='propety' style="height: 110px; width: 100%")
+                    span.label-property Pending
+                    span.label-price= "$" + val.price
                   // content
                 // image
                 .property-detail
                   h5.title
                     a(href='#')=val.title
-                  span.location
+                  span.location=val.city
                   .pull-left
                     p
                       b Area:
@@ -144,10 +141,10 @@ html(lang='en')
                       sup 2
                   .pull-right
                     span
-                      img(src='/images/bed.png', alt='')
+                      img(src='/images/bedrooms.png', alt='')
                       =val.nBed
                     span
-                      img(src='/images/bath.png', alt='')
+                      img(src='/images/bath.png', alt='' style="width: 25px; height: 16px;")
                       =val.nBath
       .divide60
     // col-md-12
@@ -160,72 +157,62 @@ html(lang='en')
           .col-sm-4.text-center
             a(href='#') This is the button for clients to show their interest in a property
     // call to action
-    .divide70
-    .container
-      .center-title
-        h3 Testimonies
-        p
-          | Anna Lee is the Best!!
-      .row
-        for z in testimony
-          .col-md-3.col-sm-6.margin30
-            .agent-box
-              img.img-circle.img-responsive(src=z.primary_photo, width='200', alt='')
-              h3=z.name
-              p=z.test
-              a(href='#') View Profile
-          // agent col
-    // agents content
-    .divide40
+    //
+      .divide70
+      .container
+        .center-title
+          h3 Testimonies
+          p
+            | Anna Lee is the Best!!
+        .row
+          for z in testimony
+            .col-md-3.col-sm-6.margin30
+              .agent-box
+                img.img-circle.img-responsive(src=z.primary_photo, width='200', alt='')
+                h3=z.name
+                p=z.test
+                a(href='#') View Profile
+            // agent col
+      // agents content
     footer.footer
       .container
         .row
           .col-md-3.col-sm-6.margin30
-          .col-md-3.col-sm-6.margin30
-            h3 About us
+            h4 About us
             p=template.disclaimer
             // media
           .col-md-3.col-sm-6.margin30
           .col-md-3.col-sm-6.margin30
-            h3 Contact us
-              p
-                strong=template.first_name
-                =" "
-                =template.last_name
-                br
-                p
-                =template.address
-                br
-                =template.phone
-                br
-                a(href='mailto:#{template.email}')=template.email
+          .col-md-3.col-sm-6.margin30.text-right
+            h4 Contact us
+            p
+              =template.first_name
+              =" "
+              =template.last_name
+              br
+              !=template.address.replace('\n', '<br>')
+              br
+              =template.phone
+              br
+              a(href='mailto:#{template.email}')=template.email
+            br
+
     // footer
     .copyright
       .container.text-center
-        span © Copyright 2015. All right reserved. TBQ-LOL real estate
+        span © Copyright 2015. All right reserved. Tesirol
     // scripts and plugins
     // must need plugin jquery
     script(src='jquery.min.js')
     script(src='jquery-migrate.min.js')
-    // bootstrap js plugin
-    script(src='bootstrap.min.js', type='text/javascript')
-    // easing plugin for smooth scroll
-    script(src='jquery.easing.1.3.min.js', type='text/javascript')
+
     // sticky header
     script(type='text/javascript', src='js/jquery.sticky.js')
-    // flex slider plugin
-    script(src='jquery.flexslider-min.js', type='text/javascript')
-    // parallax background plugin
-    script(src='jquery.stellar.min.js', type='text/javascript')
-    // owl carousel slider
-    script(src='owl.carousel.min.js', type='text/javascript')
-    script(src='classie.js', type='text/javascript')
-    script(src='selectFx.js', type='text/javascript')
+
+
     // revolution slider plugins
     script(src='jquery.themepunch.tools.min.js', type='text/javascript')
     script(src='jquery.themepunch.revolution.min.js', type='text/javascript')
-    script(src='tweetie.min.js', type='text/javascript')
-    // on scroll animation
-    script(src='wow.min.js', type='text/javascript')
+
     // customizable plugin edit according to your needs
     script(src='real-estate-custom.js', type='text/javascript')
